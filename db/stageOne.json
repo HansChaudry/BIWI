@@ -1,0 +1,119 @@
+[
+    {
+        "_id": "6363126bc825414c49ba1d27",
+        "itemName": "iPhone 11",
+        "currentBid": 500,
+        "imageURL": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-family-select-2021?wid=940&hei=1112&fmt=jpeg&qlt=90&.v=1617135051000",
+        "isRecent": true,
+        "isTrending": false,
+        "isRecommended": false
+    },
+    {
+        "_id": "6363126bc825414c49ba1d28",
+        "itemName": "Adidas classic",
+        "currentBid": 95,
+        "imageURL": "https://assets.adidas.com/images/w_600,f_auto,q_auto/4e894c2b76dd4c8e9013aafc016047af_9366/Superstar_Shoes_White_FV3284_01_standard.jpg",
+        "isRecent": true,
+        "isTrending": false,
+        "isRecommended": false
+    },
+    {
+        "_id": "6363126bc825414c49ba1d29",
+        "itemName": "Pikachu Detective Hat",
+        "currentBid": 40,
+        "imageURL": "https://www.pokemoncenter.com/products/images/P5521/741-04702/P5521_741-04702_01_full.jpg",
+        "isRecent": true,
+        "isTrending": false,
+        "isRecommended": false
+    },
+    {
+        "_id": "6363126bc825414c49ba1d2a",
+        "itemName": "Kobe game worn jersey",
+        "currentBid": 550000,
+        "imageURL": "https://pbs.twimg.com/media/FRouZpZWYAAZCV4?format=jpg&name=small",
+        "isRecent": true,
+        "isTrending": false,
+        "isRecommended": false
+    },
+    {
+        "_id": "6363126bc825414c49ba1d2b",
+        "itemName": "Cutting Board",
+        "currentBid": 60,
+        "imageURL": "https://cb.scene7.com/is/image/Crate/BestCuttingBoardSHS20/$web_pdp_main_carousel_zoom_med$/191101105324/best-cutting-board.jpg",
+        "isRecent": false,
+        "isTrending": true,
+        "isRecommended": false
+    },
+    {
+        "_id": "63631318c825414c49ba1d2d",
+        "itemName": "Fish Tank",
+        "currentBid": 90,
+        "imageURL": "https://m.media-amazon.com/images/I/91YWJ31n0TL.jpg",
+        "isRecent": false,
+        "isTrending": true,
+        "isRecommended": false
+    },
+    {
+        "_id": "63631318c825414c49ba1d2e",
+        "itemName": "Charcoal Grill",
+        "currentBid": 200,
+        "imageURL": "https://i.insider.com/5d1a5d54a17d6c09466ac103?width=700",
+        "isRecent": false,
+        "isTrending": true,
+        "isRecommended": false
+    },
+    {
+        "_id": "63631318c825414c49ba1d2f",
+        "itemName": "Jackie Robinson's Hat",
+        "currentBid": 590000,
+        "imageURL": "https://nypost.com/wp-content/uploads/sites/2/2016/08/robinson_cap_photos_1_131032841.jpg?quality=75&strip=all",
+        "isRecent": false,
+        "isTrending": true,
+        "isRecommended": true
+    },
+    {
+        "_id": "63631318c825414c49ba1d30",
+        "itemName": "Tom Brady Card",
+        "currentBid": 100,
+        "imageURL": "https://www.steelcitycollectibles.com/storage/img/uploads/products/full/donruss-brady-2-a44869.jpg",
+        "isRecent": false,
+        "isTrending": true,
+        "isRecommended": false
+    },
+    {
+        "_id": "63631318c825414c49ba1d31",
+        "itemName": "Drake AF1",
+        "currentBid": 300,
+        "imageURL": "https://images.solecollector.com/images/fl_lossy,q_auto/ljusuik2idqdeuarogjl/nocta-nike-air-force-1-low-front",
+        "isRecent": false,
+        "isTrending": false,
+        "isRecommended": true
+    },
+    {
+        "_id": "63631392c825414c49ba1d32",
+        "itemName": "Charizard Card",
+        "currentBid": 185000,
+        "imageURL": "https://cdn.vox-cdn.com/thumbor/ZjaRbbQozWLE9fq4IH7IruyXQv8=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/21955633/charizard_cropped.jpg",
+        "isRecent": false,
+        "isTrending": false,
+        "isRecommended": true
+    },
+    {
+        "_id": "63631392c825414c49ba1d33",
+        "itemName": "Signed KD2",
+        "currentBid": 2000,
+        "imageURL": "https://i.ebayimg.com/images/g/BVwAAOSwXMNiYwfK/s-l500.jpg",
+        "isRecent": false,
+        "isTrending": false,
+        "isRecommended": true
+    },
+    {
+        "_id": "63631392c825414c49ba1d34",
+        "itemName": "Darth Vader Signed Helmet",
+        "currentBid": 1499,
+        "imageURL": "https://cdn.shopify.com/s/files/1/1318/0685/products/DV-Signed-image2-002_2cd77170-f5a4-49c2-a462-ea8ecb2be418_2048x.jpg?v=1654610380",
+        "isRecent": false,
+        "isTrending": false,
+        "isRecommended": true
+    }
+]
