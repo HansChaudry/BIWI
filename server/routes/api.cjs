@@ -8,7 +8,6 @@ const router = express.Router();
 router.get("/data", (req, res) => {
   AuctionItem.find({ })
   .then((data) => {
-    console.log('Data: ', data)
     res.json(data);
   })
   .catch((error) => {
@@ -19,7 +18,6 @@ router.get("/data", (req, res) => {
 router.get("/data/:cond", (req, res) => {
     AuctionItem.find({[req.params.cond]: true})
       .then((data) => {
-        console.log('Data: ', data)
         res.json(data);
       })
       .catch((error) => {

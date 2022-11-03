@@ -1,0 +1,272 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Montserrat", sans-serif;
+}
+
+header {
+  background-color: goldenrod;
+  text-align: center;
+  padding: 16px 32px;
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 30%);
+}
+
+
+header h1{
+  color: white;
+  font-family: "McLaren", cursive;
+  font-weight: 200;
+  margin-left: auto;
+}
+
+.header-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .icon-box{
+  margin-left: auto;
+}
+
+.icon-box button{
+  color: white;
+  background-color: transparent;
+  border: none;
+  margin-right: 8px;
+}
+
+.icon-box button:last-child{
+  margin-right: 0;
+}
+
+nav{
+  display: inline;
+}
+
+.catergory-list {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+
+.catergory{
+  display: inline;
+  margin-left: auto;
+}
+
+.catergory:last-child{
+  margin-right: auto;
+}
+
+footer {
+  /* position: absolute; */
+  margin-top: 40px;
+  background-color: goldenrod;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+}
+
+footer p {
+  color: white;
+}
+
+.main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.featured-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 600px;
+  width: 1400px;
+}
+
+.featured{
+  box-sizing: border-box;
+  height: 60%;
+  width: 60%;
+}
+
+.recent{
+  box-sizing: border-box;
+  margin-left: 2px;
+  height: 90%;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#title{
+  text-align: center;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.recent-item{
+  display: flex;
+  border: .5px solid gray;
+  margin: 5px 0;
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 30%);
+}
+
+ul{
+  list-style-type: none;
+}
+
+li{
+  text-decoration: none;
+  height: 25%;
+}
+
+*{box-sizing: border-box;}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Make the images invisible by default */
+.slide {
+  justify-content: center;
+  display: none;
+}
+
+.Back, .Forward {
+  cursor: pointer;
+  position: absolute;
+  top: 48%;
+  width: auto;
+  margin-top: -23px;
+  padding: 17px;
+  color: grey;
+  font-weight: bold;
+  font-size: 19px;
+  transition: 0.4s ease;
+  border-radius: 0 5px 5px 0;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.Forward {
+  right: 0;
+  border-radius: 4px 0 0 4px;
+}
+
+.Back:hover, .Forward:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.Info {
+  color: #e3e3e3;
+  font-size: 16px;
+  padding: 10px 14px;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.MessageInfo {
+  color: #f2f2f3;
+  font-size: 14px;
+  padding: 10px 14px;
+  position: absolute;
+  top: 0;
+}
+
+.dots {
+  cursor: pointer;
+  height: 16px;
+  width: 16px;
+  margin: 0 3px;
+  background-color: #acc;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.5s ease;
+}
+
+.enable, .dots:hover {
+  background-color: #717161;
+}
+
+.fade {
+-webkit-animation-name: fade;
+-webkit-animation-duration: 1.4s;
+animation-name: fade;
+animation-duration: 1.4s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .5}
+  to {opacity: 2}
+}
+
+@keyframes fade {
+  from {opacity: .5}
+  to {opacity: 2}
+}
+
+#trending-title{
+  margin-bottom: 20px;
+}
+
+#trending-title:hover{
+  text-decoration: underline;
+}
+
+#trending-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trending-item{
+  margin-left: auto;
+  border: 1px solid black;
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 30%);
+}
+
+.trending-item:last-child{
+  margin-right: auto;
+}
+
+#recommended-title{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#recommended-title:hover{
+  text-decoration: underline;
+}
+
+#recommended-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recommended-item{
+  margin-left: auto;
+  border: 1px solid black;
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 30%);
+}
+
+.recommended-item:last-child{
+  margin-right: auto;
+}

@@ -1,0 +1,13 @@
+import React from "react";
+
+function SpotlightItem(props){
+    return(
+      <div className="recommended-item">
+        <img src={props.imgURL} alt="" width="200px" height="200px"/>
+        <p>{props.itemName}</p>
+        <p>{`Current Bid: ${props.currentBid}`}</p>
+      </div>
+    );
+}
+
+export default SpotlightItem;
