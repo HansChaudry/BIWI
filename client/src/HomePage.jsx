@@ -1,6 +1,6 @@
 import React from "react";
 import RecentBox from "./components/homeComponents/RecentBox";
-import FeaturedBox from "./components/homeComponents/FeaturedBox";
+// import FeaturedBox from "./components/homeComponents/FeaturedBox";
 import TrendingBox from "./components/homeComponents/TrendingBox";
 import RecommendedBox from "./components/homeComponents/RecommendedBox";
 

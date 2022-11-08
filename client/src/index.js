@@ -21,9 +21,9 @@ function plusSlides(n) {
 }
 
 //  images controls
-function currentSlide(n) {
-  SlideShow(slidePosition = n);
-}
+// function currentSlide(n) {
+//   SlideShow(slidePosition = n);
+// }
 
 function SlideShow(n) {
   var i;

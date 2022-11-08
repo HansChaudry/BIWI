@@ -39,9 +39,7 @@ router.post("/data/save", (req, res) => {
     return res.json({
         msg: 'Your data has been saved!!!!!!'
     });
-
   });
-
 });
 
 module.exports = router;
