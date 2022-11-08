@@ -9,7 +9,7 @@ const AuctionItemSchema = new Schema({
     isRecent: Boolean,
     isTrending: Boolean,
     isRecommended: Boolean,
-
+    description: String
 });
 
 const AuctionItem = mongoose.model('AuctionItems', AuctionItemSchema);
