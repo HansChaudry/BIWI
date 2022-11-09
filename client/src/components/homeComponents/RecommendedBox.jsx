@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import SpotlightItem from "./SpotlightItem";
+import SpotlightItem from "../SpotlightItem";
 
 class RecommendedBox extends React.Component{
 	state = {recItem: []}
