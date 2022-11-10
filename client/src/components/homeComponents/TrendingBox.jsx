@@ -31,9 +31,9 @@ class TrendingBox extends React.Component{
 								<SpotlightItem
 									key = {index}
                   id = {index} 
-                  imgURL= {item.imageURL}
+                  imgURL= {item.thumbnail}
                   itemName = {item.itemName}
-                  currentBid = {item.currentBid}
+                  currentBid = {'$' + item.currentBid}
 								/>
 							);
 						})}

@@ -12,7 +12,6 @@ class SellPage extends React.Component{
   handleChange = ({target}) => {
     const { name, value } = target;
     this.setState({[name]: value});
-
   }
 
   submitItem = (event) => {
@@ -50,7 +49,7 @@ class SellPage extends React.Component{
                 type="text"
                 name="itemName"
                 placeholder="Enter Item name"
-                value={this.state.name}
+                value={this.state.itemName}
                 onChange={this.handleChange}
               />
 

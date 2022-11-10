@@ -7,11 +7,11 @@ function Header() {
   return (
     <header>
       <div className="header-box">
-        <h1>BIWI</h1>
+        <h1><a href="/">BIWI</a></h1>
         <div className="icon-box">
-          <button><ReceiptOutlinedIcon/></button>
-          <button><ShoppingCartOutlinedIcon/></button>
-          <button><PermIdentityOutlinedIcon/></button>
+          <a href="/"><ReceiptOutlinedIcon/></a>
+          <a href="/"><ShoppingCartOutlinedIcon/></a>
+          <a href="/login"><PermIdentityOutlinedIcon/></a>
         </div>
       </div>
     </header>

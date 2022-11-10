@@ -33,6 +33,11 @@ header .icon-box{
   margin-left: auto;
 }
 
+header a{
+  text-decoration: none;
+  color: white;
+}
+
 .icon-box button{
   color: white;
   background-color: transparent;
@@ -63,6 +68,10 @@ nav{
 
 .catergory:last-child{
   margin-right: auto;
+}
+
+.catergory-link{
+  text-decoration: none !important;
 }
 
 footer {
@@ -262,13 +271,10 @@ animation-duration: 1.4s;
 }
 
 .recommended-item{
-  margin-left: auto;
-  border: 1px solid black;
+  margin: 15px 40px;
+  /* border: 1px solid black; */
   box-shadow: 0 0 10px 0 rgb(0 0 0 / 30%);
-}
-
-.recommended-item:last-child{
-  margin-right: auto;
+  padding: 2px;
 }
 
 .fork{
@@ -301,4 +307,69 @@ animation-duration: 1.4s;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.page-title{
+  text-align: center;
+}
+
+.item-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.login-container{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container form{
+  background-color: rgba(166, 166, 166, 0.67);
+  width: 500px;
+  height: 50%;
+}
+
+.login-container h2{
+  text-align: center;
+
+}
+
+.login-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+#userName, #password{
+  text-align: center;
+  border-radius: 5px;
+  height: 40px;
+  width: 300px;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.login-icon{
+  width: 30px;
+  height: 30px;
+}
+
+.login-btn{
+  width: 60px;
+  height: 30px;
+  font-size: 15px;
+}
+
+.login-btn:hover{
+  background-color: #4c8bf5;
+  border-color: #4c8bf5;
+  color: white;
 }

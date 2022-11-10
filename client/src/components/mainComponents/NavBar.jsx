@@ -1,21 +1,30 @@
 import React from "react";
 
-function NavBar(){
-    return(
-        <nav>
-            <ul className="catergory-list">
-                <li className="catergory"><a href="/">Motors</a></li>
-                <li className="catergory"><a href="/">Electronics</a></li>
-                <li className="catergory"><a href="/">Collectibles</a></li>
-                <li className="catergory"><a href="/">Home & Garden</a></li>
-                <li className="catergory"><a href="/">Clothing & Accessories</a></li>
-                <li className="catergory"><a href="/">Toys</a></li>
-                <li className="catergory"><a href="/">Sporting Goods</a></li>
-                <li className="catergory"><a href="/">Business & Industrial</a></li>
-                <li className="catergory"><a href="/">Jewelry & Watches</a></li>
-            </ul>
-        </nav>
-    );
+class NavBar extends React.Component{
+    state = {
+        catergories: [
+            "All",
+            "Smartphones",
+            "Laptops",
+            "Fragrances",
+            "Skincare",
+            "Groceries",
+            "Home-decoration",
+            "Furniture",
+            "Tops"
+        ]
+    }
+    render(){
+        return(
+            <nav>
+                <ul className="catergory-list">
+                    {this.state.catergories.map((item) => {
+                        return <li className="catergory"><a className="catergory-link" href={`/buy/${item.toLowerCase()}`}>{item}</a></li>;
+                    })}
+                </ul>
+            </nav>
+        );
+    }
 }
 
 export default NavBar;
