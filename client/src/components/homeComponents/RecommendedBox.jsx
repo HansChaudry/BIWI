@@ -24,8 +24,8 @@ class RecommendedBox extends React.Component{
 	render(){
 		return(
 			<div>
-				<h2 id="recommended-title">Recommended Items|See All&rarr;</h2>
-				<div id="recommended-container">
+				<h2 className="spotlight-box-title">Recommended Items | See All&rarr;</h2>
+				<div className="spotlight-box">
 					{this.state.recItem.map((item, index) => {
 						return(
 							<SpotlightItem

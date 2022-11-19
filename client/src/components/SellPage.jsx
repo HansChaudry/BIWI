@@ -42,7 +42,7 @@ class SellPage extends React.Component{
 
   render(){
       return(
-        <div className="form-container">
+        <div className="sellpage-box">
           <form onSubmit={this.submitItem}>
             <div className="item-form-div1">
               <input 
@@ -63,7 +63,7 @@ class SellPage extends React.Component{
             </div>
             <div className="item-form-div2">
               <input 
-                type="int"
+                type="number"
                 name="startBid"
                 placeholder="0"
                 value={this.state.startBid}

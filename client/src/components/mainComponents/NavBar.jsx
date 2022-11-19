@@ -19,7 +19,9 @@ class NavBar extends React.Component{
             <nav>
                 <ul className="catergory-list">
                     {this.state.catergories.map((item) => {
-                        return <li className="catergory"><a className="catergory-link" href={`/buy/${item.toLowerCase()}`}>{item}</a></li>;
+                        return <li className="catergory"><a className="catergory-link" href={`/buy/${item.toLowerCase()}`} 
+                        name={item.toLowerCase()}
+                        >{item}</a></li>;
                     })}
                 </ul>
             </nav>

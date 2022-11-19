@@ -24,8 +24,8 @@ class TrendingBox extends React.Component{
   render(){
     return(
       <div>
-          <h2 id="trending-title">Trending Items|See All&rarr;</h2>
-          <div id="trending-container">
+          <h2 className="spotlight-box-title">Trending Items | See All&rarr;</h2>
+          <div className="spotlight-box">
             {this.state.trendItems.map((item, index) => {
 							return(
 								<SpotlightItem

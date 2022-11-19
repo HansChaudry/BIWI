@@ -38,26 +38,26 @@ class BuyPage extends React.Component{
 
   render(){
     return(
-        <div>
-            <h1 className="page-title">Buy Page</h1>
-            <hr></hr>
-            <NavBar/>
-            <div className="main-section">
-              <div className="item-container">
-                {this.state.items.map((item, index) => {
-                  return(
-                    <SpotlightItem
-                      key = {index}
-                      id = {index} 
-                      imgURL= {item.thumbnail}
-                      itemName = {item.itemName}
-                      currentBid = {'$' + item.currentBid}
-                    />
-                  );
-                })}
-              </div>
-            </div>
+      <div>
+        <h1 className="page-title">Buy Page</h1>
+        <br />
+        <NavBar/>
+        <br />
+        <hr></hr>
+        <div className="spotlight-box buypage-box">
+          {this.state.items.map((item, index) => {
+            return(
+              <SpotlightItem
+                key = {index}
+                id = {index} 
+                imgURL= {item.thumbnail}
+                itemName = {item.itemName}
+                currentBid = {'$' + item.currentBid}
+              />
+            );
+          })}
         </div>
+      </div>
     );
   }
 }

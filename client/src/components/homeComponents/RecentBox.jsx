@@ -15,6 +15,7 @@ class RecentBox extends React.Component{
         const data = response.data;
         this.setState({recentItems: data});
         console.log('Data has be delivered');
+        console.log(data);
       })
       .catch(() => {
         alert("Error retrieving items")
@@ -25,7 +26,7 @@ class RecentBox extends React.Component{
     return(
       <div className="recent">
           <ul>
-              <p id="title">Recently Viewed</p>
+              <p id="recent-title">Recently Viewed</p>
               {this.state.recentItems.map((item, index) => {
                 return(
                   <RecentItem
