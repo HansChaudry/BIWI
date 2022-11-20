@@ -1,7 +1,7 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes, useParams, Navigate, redirect} from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useParams, Navigate} from 'react-router-dom';
 import HomePage from './components/HomePage';
-import LoginPage, {LoginRouter} from './components/LoginPage/LoginPage';
+import {LoginRouter} from './components/LoginPage/LoginPage';
 import SellPage from './components/SellPage/SellPage';
 import BuyPage from './components/BuyPage/BuyPage'
 import AccountPage from './components/AccountPage';
