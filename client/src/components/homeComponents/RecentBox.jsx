@@ -14,8 +14,6 @@ class RecentBox extends React.Component{
       .then((response) => {
         const data = response.data;
         this.setState({recentItems: data});
-        console.log('Data has be delivered');
-        console.log(data);
       })
       .catch(() => {
         alert("Error retrieving items")

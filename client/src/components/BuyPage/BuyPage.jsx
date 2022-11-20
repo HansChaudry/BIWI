@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
-import SpotlightItem from "./SpotlightItem";
-import NavBar from "./mainComponents/NavBar";
+import SpotlightItem from "../SpotlightItem";
+import NavBar from "../mainComponents/NavBar";
 
 class BuyPage extends React.Component{
   state = {
