@@ -14,7 +14,6 @@ class RecommendedBox extends React.Component{
 		.then((response) => {
 			const data = response.data;
 			this.setState({recItem: data});
-			console.log('Data has be delivered');
 		})
 		.catch(() => {
 			alert("Error retrieving items")
@@ -30,10 +29,10 @@ class RecommendedBox extends React.Component{
 						return(
 							<SpotlightItem
 								key = {index}
-								id = {index} 
+								id = {item._id} 
 								imgURL= {item.thumbnail}
 								itemName = {item.itemName}
-								currentBid = {'$' + item.currentBid}
+								currentBid = {item.currentBid}
 							/>
 						);
 					})}

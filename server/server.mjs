@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import path from "path";
 import morgan from "morgan";
-import routes from "./routes/api.cjs"
+import routes from "./routes/api.mjs"
 
 const app = express();
 const PORT = 8080;

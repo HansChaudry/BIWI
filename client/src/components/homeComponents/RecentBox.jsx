@@ -32,7 +32,7 @@ class RecentBox extends React.Component{
                     id = {index} 
                     imgURL= {item.thumbnail}
                     itemName = {item.itemName}
-                    currentBid = {'$' + item.currentBid}
+                    currentBid = {item.currentBid}
                   />);
               })}
           </ul>

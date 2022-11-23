@@ -82,7 +82,7 @@ class LoginPage extends React.Component{
                 <button type="submit">Sign In</button>
             </form>
             <div className="login-card-footer">
-                Don't have an account? <a href="#">Create a free account.</a>
+                Don't have an account? <a href="/register">Create a free account.</a>
             </div>
           </div>
       </div>

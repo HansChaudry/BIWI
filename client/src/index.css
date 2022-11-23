@@ -91,9 +91,9 @@ header{
   box-shadow: 0 0 10px 0 rgb(0 0 0 / 30%);
 }
 
-/* .recent-card-info{
- 
-} */
+.recent-card-info{
+  width: 100%;
+}
 
 .recent-card-buttons{
   display: flex;

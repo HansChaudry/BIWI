@@ -14,7 +14,6 @@ class TrendingBox extends React.Component{
       .then((response) => {
         const data = response.data;
         this.setState({trendItems: data});
-        console.log('Data has be delivered');
       })
       .catch(() => {
         alert("Error retrieving items")
@@ -33,7 +32,7 @@ class TrendingBox extends React.Component{
                   id = {index} 
                   imgURL= {item.thumbnail}
                   itemName = {item.itemName}
-                  currentBid = {'$' + item.currentBid}
+                  currentBid = {item.currentBid}
 								/>
 							);
 						})}
