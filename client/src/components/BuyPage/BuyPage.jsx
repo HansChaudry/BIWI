@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
-import SpotlightItem from "../SpotlightItem";
-import NavBar from "../mainComponents/NavBar";
+import SpotlightItem from "../HomePage/SpotlightItem";
+// import NavBar from "../mainComponents/NavBar";
 
 class BuyPage extends React.Component{
   state = {
@@ -63,3 +63,30 @@ class BuyPage extends React.Component{
 }
 
 export default BuyPage; 
+
+
+function NavBar(){
+  let catergories = [
+          "All",
+          "Smartphones",
+          "Laptops",
+          "Fragrances",
+          "Skincare",
+          "Groceries",
+          "Home-decoration",
+          "Furniture",
+          "Tops"
+      ]
+
+  return(
+      <nav>
+          <ul className="catergory-list">
+              {catergories.map((item) => {
+                  return <li className="catergory"><a className="catergory-link" href={`/buy/${item.toLowerCase()}`} 
+                  name={item.toLowerCase()}
+                  >{item}</a></li>;
+              })}
+          </ul>
+      </nav>
+  );
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import SpotlightItem from "../SpotlightItem";
+import SpotlightItem from "./SpotlightItem";
 
 class RecommendedBox extends React.Component{
 	state = {recItem: []}
@@ -23,7 +23,10 @@ class RecommendedBox extends React.Component{
 	render(){
 		return(
 			<div>
-				<h2 className="spotlight-box-title">Recommended Items | See All&rarr;</h2>
+				<div>
+
+					<h2 className="spotlight-box-title">Recommended Items | See All&rarr;</h2>
+				</div>
 				<div className="spotlight-box">
 					{this.state.recItem.map((item, index) => {
 						return(

@@ -11,11 +11,11 @@ function SpotlightItem(props){
 
   return(
     <div className="spotlight-card">
-      <img className="spotlight-card-img" src={props.imgURL} alt="" width="200px" height="200px"/>
+      <img className="spotlight-card-img" src={props.imgURL} alt="" width="180px" height="180px"/>
       <div className="spotlight-card-body">
-        <p>{props.itemName.length > 16 ? (props.itemName).substring(15, 0) + "..." : props.itemName}</p>
-        <p>{`Buy Now: $${props.currentBid}`}</p>
-        <p>{`Current Bid: $${Math.round(props.currentBid*.70)}`}</p>
+        <p><b>{props.itemName.length > 16 ? (props.itemName).substring(15, 0) + "..." : props.itemName}</b></p>
+        <p>{`Buy Now: ${props.currentBid}`}</p>
+        <p>{`Current Bid: ${Math.round(props.currentBid*.70)}`}</p>
         <button className="spotlight-card-buyBTN" id={props.id} onClick={goToProuct}>Buy Now</button>
         <button className="spotlight-card-bidBTN">Bid Now</button>
       </div>

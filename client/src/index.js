@@ -12,7 +12,18 @@ root.render(
 );
 
 var slidePosition = 1;
-SlideShow(slidePosition);
+setTimeout(function () {
+  var i;
+  var slides = document.getElementsByClassName("slide");
+  console.log(slides);
+  if (slidePosition > slides.length) {slidePosition = 1}
+  if (slidePosition < 1) {slidePosition = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  slides[slidePosition-1].style.display = "flex";
+} , 1000)
+
 
 // forward/Back controls
 function plusSlides(n) {
@@ -27,6 +38,7 @@ function plusSlides(n) {
 function SlideShow(n) {
   var i;
   var slides = document.getElementsByClassName("slide");
+  console.log(slides);
   if (n > slides.length) {slidePosition = 1}
   if (n < 1) {slidePosition = slides.length}
   for (i = 0; i < slides.length; i++) {
