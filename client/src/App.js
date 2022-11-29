@@ -15,6 +15,11 @@ import ReceiptOutlinedIcon from '@mui/icons-material/ReceiptOutlined';
 class App extends React.Component{
   state = 0;
 
+  componentDidMount = () =>{
+    this.setState(UserProfile.getInfo);
+    console.log(this.state);
+  }
+
   updateUser = (user) =>{
     this.setState({user: user}, () => {
       UserProfile.setInfo(user);
@@ -27,10 +32,10 @@ class App extends React.Component{
         <Header/>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={this.state === 1 ? <Navigate replace to="/login"/> : <HomePage/>}></Route>
+            <Route path="/" element={this.state === 0 ? <Navigate replace to="/login"/> : <HomePage/>}></Route>
             <Route path='/sell' element={<SellPage/>}/>
             <Route path='/buy/:catergory' element={<SwitchBuyPage/>}/>
-            <Route path="/login" element={this.state === 1 ? <LoginRouter updateUser={this.updateUser}/> : <Navigate replace to="/userAccount"/>}></Route>
+            <Route path="/login" element={this.state === 0 ? <LoginRouter updateUser={this.updateUser}/> : <Navigate replace to="/"/>}></Route>
             <Route path='/register' element={<RegisterRouter/>}></Route>
             <Route path="/userAccount" element={<AccountPage/>}/>
             <Route path='/product/:id' element={<SwitchProductPage/>}/>

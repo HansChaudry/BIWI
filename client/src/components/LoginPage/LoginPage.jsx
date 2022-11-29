@@ -30,8 +30,13 @@ class LoginPage extends React.Component{
       data: payload 
     })
       .then((data) => {
-        this.props.updateUser(data.data);
-        this.props.navigate('/');
+        this.setState({
+          email: '',
+          password: ''
+        }, () => {
+          this.props.updateUser(data.data);
+          this.props.navigate('/');
+        });
       })
       .catch(() => {
         console.log('Internal server error');

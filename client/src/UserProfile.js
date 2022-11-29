@@ -1,5 +1,5 @@
 var UserProfile = (function() {
-    var info = {};
+    var info = 0;
   
     var getInfo = function() {
       return info;    // Or pull this from cookie/localStorage

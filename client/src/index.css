@@ -157,15 +157,23 @@ li{
   text-align: center;
 }
 
-.spotlight-card-buyBTN{
-  float: left;
+.spotlight-card-BTN{
+  font-size: 18px;
+  width: 100%;
+}
+
+.spotlight-card-buyNow{
   font-size: 18px;
 }
 
-.spotlight-card-bidBTN{
-  float: right;
+.spotlight-card-bid{
   font-size: 18px;
 }
+
+.spotlight-card-buyNow span, .spotlight-card-bid span{
+  font-size: 14px;
+}
+
 
 footer{
   /* position: absolute; */
