@@ -1,48 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import SpotlightItem from "./SpotlightItem";
+import { useEffect } from "react";
 
-class RecommendedBox extends React.Component{
-	state = {recItem: []}
+const RecommendedBox = () =>{
+   const [recItems, setItems] = useState([]);
 
-	componentDidMount= () => {
-    	this.getRecs();
-  	}
+	useEffect(() => {
+      getRecs();
+   }, []);
 
-	getRecs = () => {
+	let getRecs = () => {
 		axios.get('/data/isRecommended')
 		.then((response) => {
 			const data = response.data;
-			this.setState({recItem: data});
+			setItems(data);
 		})
 		.catch(() => {
 			alert("Error retrieving items")
 		});
   	}
 
-	render(){
-		return(
-			<div>
-				<div>
+   return(
+      <div>
+         <div>
 
-					<h2 className="spotlight-box-title">Recommended Items | See All&rarr;</h2>
-				</div>
-				<div className="spotlight-box">
-					{this.state.recItem.map((item, index) => {
-						return(
-							<SpotlightItem
-								key = {index}
-								id = {item._id} 
-								imgURL= {item.thumbnail}
-								itemName = {item.itemName}
-								currentBid = {item.currentBid}
-							/>
-						);
-					})}
-				</div>
-			</div>
-		);	
-	}
+            <h2 className="spotlight-box-title">Recommended Items | See All&rarr;</h2>
+         </div>
+         <div className="spotlight-box">
+            {recItems.map((item, index) => {
+               return(
+                  <SpotlightItem
+                     key = {index}
+                     id = {item._id} 
+                     imgURL= {item.thumbnail}
+                     itemName = {item.itemName}
+                     currentBid = {item.currentBid}
+                  />
+               );
+            })}
+         </div>
+      </div>
+   );	
 }
 
 export default RecommendedBox;

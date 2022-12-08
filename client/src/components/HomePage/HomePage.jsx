@@ -9,14 +9,12 @@ function MainSection() {
       <Fork/>
       <div className="featured-box">
         <div className="featured">
-              <div className="slideshow-container fade">
-                  <div className="slide">
-                      <img src="https://media.slidesgo.com/storage/15671783/online-shopping-sales-infographics1640174373.jpg" width="1000px" height="400px" alt=""/>
-                  </div>
-              </div>
+          <div className="slideshow-container fade">
+            <img id="banner" src={process.env.PUBLIC_URL + '/Banner.png'} alt=""/>
           </div>
-          <RecentBox/>
+        </div>
       </div>
+      <RecentBox/>
       <TrendingBox/>
       <RecommendedBox/>
     </div>
@@ -26,8 +24,8 @@ function MainSection() {
 function Fork(){
   return(
       <div className="fork-box">
-          <div><a className="fork-link" href="/buy/all">Buy</a></div>
-          <div><a className="fork-link" href="/sell">Sell</a></div>
+          <div id="buy-fork"><a className="fork-link" href="/buy/all">Buy</a></div>
+          <div id="sell-fork"><a className="fork-link" href="/sell">Sell</a></div>
       </div>
   );
 }

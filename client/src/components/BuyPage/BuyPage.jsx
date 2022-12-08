@@ -1,25 +1,23 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import axios from "axios";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SpotlightItem from "../HomePage/SpotlightItem";
-// import NavBar from "../mainComponents/NavBar";
 
-class BuyPage extends React.Component{
-  state = {
-    items: []
-  }
+const BuyPage = (props) =>{
+  const [items, setItems] = useState([]);
 
-  componentDidMount= () => {
-    this.getItems();
-  }
+  useEffect(() => {
+    getItems();
+  }, []);
 
-  getItems = () => {
+  let getItems = () => {
     // eslint-disable-next-line eqeqeq
-    if([this.props.catergory] != 'all'){
-      console.log(this.props.catergory);
-      axios.get(`/data/filter/${this.props.catergory}`)
+    if([props.catergory] != 'all'){
+      console.log(props.catergory);
+      axios.get(`/data/filter/${props.catergory}`)
       .then((response) => {
         const data = response.data;
-        this.setState({items: data});
+        setItems(data);
       })
       .catch(() => {
         alert("Error retrieving items")
@@ -28,7 +26,7 @@ class BuyPage extends React.Component{
       axios.get('/data')
         .then((response) => {
           const data = response.data;
-          this.setState({items: data});
+          setItems(data);
         })
         .catch(() => {
           alert("Error retrieving items")
@@ -36,30 +34,28 @@ class BuyPage extends React.Component{
     }
   }
 
-  render(){
-    return(
-      <div>
-        <h1 className="page-title">Buy Page</h1>
-        <br />
-        <NavBar/>
-        <br />
-        <hr></hr>
-        <div className="spotlight-box buypage-box">
-          {this.state.items.map((item, index) => {
-            return(
-              <SpotlightItem
-                key = {index}
-                id = {index} 
-                imgURL= {item.thumbnail}
-                itemName = {item.itemName}
-                currentBid = {'$' + item.currentBid}
-              />
-            );
-          })}
-        </div>
+  return(
+    <div>
+      <h1 className="page-title">Buy Page</h1>
+      <br />
+      <NavBar/>
+      <br />
+      <hr></hr>
+      <div className="spotlight-box buypage-box">
+        {items.map((item, index) => {
+          return(
+            <SpotlightItem
+              key = {index}
+              id = {item._id} 
+              imgURL= {item.thumbnail}
+              itemName = {item.itemName}
+              currentBid = {'$' + item.currentBid}
+            />
+          );
+        })}
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default BuyPage; 

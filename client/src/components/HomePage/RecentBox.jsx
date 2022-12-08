@@ -1,45 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import {useNavigate} from 'react-router-dom';
+import { useEffect } from "react";
+import SpotlightItem from "./SpotlightItem";
 
-class RecentBox extends React.Component{
-  state = {recentItems: []}
+const RecentBox = () =>{
+  const [items, setItems] = useState([]);
 
-  componentDidMount= () => {
-    this.getRecents();
-  }
+  useEffect(() => {
+    getRecents();
+  }, []);
 
-  getRecents = () => {
+  let getRecents = () => {
     axios.get('/data/isRecent')
       .then((response) => {
         const data = response.data;
-        this.setState({recentItems: data});
+        setItems(data);
       })
       .catch(() => {
         alert("Error retrieving items")
       });
   }
 
-  render(){
-    return(
-      <div className="recent">
-          <ul>
-              <p id="recent-title">Recently Viewed</p>
-              {this.state.recentItems.map((item, index) => {
-                return(
-                  <RecentItem
-                    key = {index}
-                    id = {item._id} 
-                    imgURL= {item.thumbnail}
-                    itemName = {item.itemName}
-                    currentBid = {item.currentBid}
-                  />);
-              })}
-          </ul>
+  return(
+    <div>
+      <div>
+         <h2 className="spotlight-box-title">Recently Viewed | See All&rarr;</h2>
       </div>
-    );
-
-  }
+      <div className="spotlight-box">
+        {items.map((item, index) => {
+          return(
+            <SpotlightItem
+              key = {index}
+              id = {item._id} 
+              imgURL= {item.thumbnail}
+              itemName = {item.itemName}
+              currentBid = {item.currentBid}
+            />);
+        })}
+      </div>
+    </div>
+  );
+  
 }
 
 function RecentItem(props){

@@ -1,52 +1,50 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import './ProductPage.css'
 
-class ProductPage extends React.Component{
-    state = ''
+const ProductPage = (props) => {
+    const [item, setItem] = useState([])
     
-    componentDidMount= () => {
-    	this.getProduct();
-  	}
+    useEffect(() => {
+       getItem();
+    }, []);
 
-    getProduct = () => {
-        axios.get(`/data/byID/${this.props.id}`)
+    let getItem = () => {
+        axios.get(`/data/byID/${props.id}`)
 		.then((response) => {
 			const data = response.data;
-			this.setState(data);
+			setItem(data);
 		})
 		.catch(() => {
 			alert("Error retrieving items")
 		});
     }
 
-    render(){
-        return(
-            <div className="product-card-container">
-                <h2>{this.state.itemName}</h2>
-                <div className="product-card">
-                    <div className="product-img-box">
-                        <img src={this.state.thumbnail} alt="" srcset="" height="500" />
-                    </div>
+    return(
+        <div className="product-card-container">
+            <h2>{item.itemName}</h2>
+            <div className="product-card">
+                <div className="product-img-box">
+                    <img src={item.thumbnail} alt="" height="500" />
+                </div>
 
-                    <div className="buy-bid-box">
-                        <p>Buy Now Price: ${this.state.currentBid}</p>
-                        <p>Highest Bid: ${Math.round(this.state.currentBid * .70)}</p>
-                        <p></p>
-                        <form action="">
-                            <br />
-                            <br />
-                            <input type="Number" name="" id="bidAmount" />
-                            <button>Bid Now</button>
-                            <br />
-                            <button>Buy Now</button>
-                            {this.state ? <BidInputs/> : <BuyInputs/>}
-                        </form>
-                    </div>
+                <div className="buy-bid-box">
+                    <p>Buy Now Price: ${item.currentBid}</p>
+                    <p>Highest Bid: ${Math.round(item.currentBid * .70)}</p>
+                    <p></p>
+                    <form action="">
+                        <br />
+                        <br />
+                        <input type="Number" name="" id="bidAmount" />
+                        <button>Bid Now</button>
+                        <br />
+                        <button>Buy Now</button>
+                        {item ? <BidInputs/> : <BuyInputs/>}
+                    </form>
                 </div>
             </div>
-        );
-    }
+        </div>
+    );
 }
 
 function BuyInputs(){

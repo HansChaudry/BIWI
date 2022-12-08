@@ -66,7 +66,7 @@ router.post("/data/users/auth", (req, res) => {
   console.log(data.email);
   User.findOne({"email": [data.email], "password": [data.password]})
     .then((foundUser) => {
-      res.json(foundUser);
+      res.json(foundUser._id);
     })
     .catch((error) => {
       console.log('error: ', error)
@@ -86,6 +86,16 @@ router.post("/data/users/registration", (req, res) => {
         msg: 'New user has been saved!!!!!!'
     });
   });
+});
+
+router.get("/data/users/byID/:id", (req, res) => {
+  User.findById(req.params.id)
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((error) => {
+      console.log('error: ', error)
+    });
 });
 
 export default router;

@@ -17,8 +17,6 @@ function SpotlightItem(props){
         <p className="spotlight-card-buyNow"> <span>Buy Now: </span>${props.currentBid}</p>
         <p className="spotlight-card-bid"> <span>Current Bid: </span>${Math.round(props.currentBid*.70)}</p>
         <button className="spotlight-card-BTN" id={props.id} onClick={goToProduct}>View Item</button>
-        {/* <button className="spotlight-card-buyBTN" id={props.id} onClick={goToProuct}>Buy Now</button>
-        <button className="spotlight-card-bidBTN">Bid Now</button> */}
       </div>
     </div>
   );

@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import '../Register/Register.css'
+import { usenewUser } from "react";
 
-class RegisterPage extends React.Component{
-  state = {
+const RegisterPage = (props) => {
+  const [newUser, setInfo] = useState({
     firstName: '',
     lastName: '',
     age: 0,
@@ -12,25 +13,30 @@ class RegisterPage extends React.Component{
     password: '',
     passwordCopy: '',
     username: ''
-  }
+  });
 
-  handleChange = ({target}) => {
+  let handleChange = ({target}) => {
     const { name, value } = target;
-    this.setState({[name] : value});
+    setInfo((prevValues) => {
+      return {
+        ...prevValues,
+        [name] : value
+      };
+    });
   }
 
-  submitForm = (event) => {
+  let submitForm = (event) => {
     event.preventDefault();
     const payload = {
-      firstName: this.state.firstName,  
-      lastName: this.state.lastName,
+      firstName: newUser.firstName,  
+      lastName: newUser.lastName,
       maidenName: '', 
-      age: this.state.age,
+      age: newUser.age,
       gender: '',     
-      email:  this.state.email,
+      email:  newUser.email,
       phone: '',      
-      username: this.state.username,
-      password: this.state.password,   
+      username: newUser.username,
+      password: newUser.password,   
       birthDate: '',
       profileIMG: '',         
       ip: '',
@@ -42,7 +48,7 @@ class RegisterPage extends React.Component{
           lng: 0
         },
         postalCode: '',
-        state: ''
+        newUser: ''
       },
       bank: {
         cardExpire: '',
@@ -63,97 +69,95 @@ class RegisterPage extends React.Component{
       data: payload 
     })
       .then((data) => {
-        this.props.navigate('/login');
+        props.navigate('/login');
       })
       .catch(() => {
         console.log('Internal server error');
       });
   }
 
-  render(){
-    return(
-      <div className="register-card-container">
-        <div className="register-card">
-          <div className="register-card-logo">
-            <img src={process.env.PUBLIC_URL + '/BIWIlogo.png'} alt="logo"/>
-          </div>
-          <div className="register-card-header">
-            <h1>Register</h1>
-            <div>Please double check your information</div>
-          </div>
-          <form onSubmit={this.submitForm} className="register-card-form">
-            <div className="form-item">
-              {/* <EmailOutlined className="form-item-icon"/> */}
-              <input 
-                type="text" 
-                name="firstName" 
-                id="firstName" 
-                placeholder="First name" 
-                value={this.state.firstName}
-                onChange={this.handleChange}
-              />
-          </div>
-          <div className="form-item">
-              {/* <LockOutlinedIcon className="form-item-icon"/> */}
-              <input 
-                type="text" 
-                name="lastName" 
-                id="lastName" 
-                placeholder="Last name"
-                value={this.state.lastName}
-                onChange={this.handleChange}
-              />
-          </div>
-          <div className="form-item">
-              {/* <LockOutlinedIcon className="form-item-icon"/> */}
-              <input 
-                type="text" 
-                name="email" 
-                id="email" 
-                placeholder="Enter your email"
-                value={this.state.email}
-                onChange={this.handleChange}
-              />
-          </div>
-          <div className="form-item">
-              {/* <LockOutlinedIcon className="form-item-icon"/> */}
-              <input 
-                type="password" 
-                name="password" 
-                id="password" 
-                placeholder="Enter your password"
-                value={this.state.password}
-                onChange={this.handleChange}
-              />
-          </div>
-          <div className="form-item">
-              {/* <LockOutlinedIcon className="form-item-icon"/> */}
-              <input 
-                type="password" 
-                name="passwordCopy" 
-                id="passwordCopy" 
-                placeholder="Enter your password again"
-                value={this.state.passwordCopy}
-                onChange={this.handleChange}
-              />
-          </div>
-          <div className="form-item">
-              {/* <LockOutlinedIcon className="form-item-icon"/> */}
-              <input 
-                type="text" 
-                name="username" 
-                id="username" 
-                placeholder="Enter your userName"
-                value={this.state.username}
-                onChange={this.handleChange}
-              />
-          </div>
-          <button type="submit">Register</button>
-          </form>
+  return(
+    <div className="register-card-container">
+      <div className="register-card">
+        <div className="register-card-logo">
+          <img src={process.env.PUBLIC_URL + '/BIWIlogo.png'} alt="logo"/>
         </div>
+        <div className="register-card-header">
+          <h1>Register</h1>
+          <div>Please double check your information</div>
+        </div>
+        <form onSubmit={submitForm} className="register-card-form">
+          <div className="form-item">
+            {/* <EmailOutlined className="form-item-icon"/> */}
+            <input 
+              type="text" 
+              name="firstName" 
+              id="firstName" 
+              placeholder="First name" 
+              value={newUser.firstName}
+              onChange={handleChange}
+            />
+        </div>
+        <div className="form-item">
+            {/* <LockOutlinedIcon className="form-item-icon"/> */}
+            <input 
+              type="text" 
+              name="lastName" 
+              id="lastName" 
+              placeholder="Last name"
+              value={newUser.lastName}
+              onChange={handleChange}
+            />
+        </div>
+        <div className="form-item">
+            {/* <LockOutlinedIcon className="form-item-icon"/> */}
+            <input 
+              type="text" 
+              name="email" 
+              id="email" 
+              placeholder="Enter your email"
+              value={newUser.email}
+              onChange={handleChange}
+            />
+        </div>
+        <div className="form-item">
+            {/* <LockOutlinedIcon className="form-item-icon"/> */}
+            <input 
+              type="password" 
+              name="password" 
+              id="password" 
+              placeholder="Enter your password"
+              value={newUser.password}
+              onChange={handleChange}
+            />
+        </div>
+        <div className="form-item">
+            {/* <LockOutlinedIcon className="form-item-icon"/> */}
+            <input 
+              type="password" 
+              name="passwordCopy" 
+              id="passwordCopy" 
+              placeholder="Enter your password again"
+              value={newUser.passwordCopy}
+              onChange={handleChange}
+            />
+        </div>
+        <div className="form-item">
+            {/* <LockOutlinedIcon className="form-item-icon"/> */}
+            <input 
+              type="text" 
+              name="username" 
+              id="username" 
+              placeholder="Enter your userName"
+              value={newUser.username}
+              onChange={handleChange}
+            />
+        </div>
+        <button type="submit">Register</button>
+        </form>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export function RegisterRouter(props){
