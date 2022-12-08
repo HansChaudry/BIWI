@@ -36,7 +36,7 @@ const BuyPage = (props) =>{
 
   return(
     <div>
-      <h1 className="page-title">Buy Page</h1>
+      {/* <h1 className="page-title">Buy Page</h1> */}
       <br />
       <NavBar/>
       <br />
