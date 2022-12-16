@@ -11,7 +11,7 @@ const RecommendedBox = () =>{
    }, []);
 
 	let getRecs = () => {
-		axios.get('/data/isRecommended')
+		axios.get('/data/products/isRecommended')
 		.then((response) => {
 			const data = response.data;
 			setItems(data);

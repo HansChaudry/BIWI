@@ -6,6 +6,7 @@ function SpotlightItem(props){
 
   let goToProduct = ({target}) => {
     const { id } = target;
+    console.log(id);
     navigate(`/product/${id}`);
   }
 

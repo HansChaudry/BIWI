@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useitem } from "react";
+import React from "react";
 import '../SellPage/SellPage.css'
 import LinkOutlinedIcon from '@mui/icons-material/LinkOutlined';
 import ClassOutlinedIcon from '@mui/icons-material/ClassOutlined';
@@ -36,7 +36,7 @@ const SellPage = () => {
     };
 
     axios({
-      url: '/data/save',
+      url: '/data/products/save',
       method: 'POST',
       data: payload 
     })

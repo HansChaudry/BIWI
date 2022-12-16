@@ -14,7 +14,7 @@ const BuyPage = (props) =>{
     // eslint-disable-next-line eqeqeq
     if([props.catergory] != 'all'){
       console.log(props.catergory);
-      axios.get(`/data/filter/${props.catergory}`)
+      axios.get(`/data/products/filter/${props.catergory}`)
       .then((response) => {
         const data = response.data;
         setItems(data);
@@ -23,7 +23,7 @@ const BuyPage = (props) =>{
         alert("Error retrieving items")
       });
     }else{
-      axios.get('/data')
+      axios.get('/data/products')
         .then((response) => {
           const data = response.data;
           setItems(data);

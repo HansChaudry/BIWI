@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import {useNavigate} from 'react-router-dom';
 import { useEffect } from "react";
 import SpotlightItem from "./SpotlightItem";
 
@@ -12,9 +11,10 @@ const RecentBox = () =>{
   }, []);
 
   let getRecents = () => {
-    axios.get('/data/isRecent')
+    axios.get('/data/products/isRecent')
       .then((response) => {
         const data = response.data;
+        console.log(data);
         setItems(data);
       })
       .catch(() => {
@@ -29,6 +29,7 @@ const RecentBox = () =>{
       </div>
       <div className="spotlight-box">
         {items.map((item, index) => {
+          console.log(item._id)
           return(
             <SpotlightItem
               key = {index}
@@ -44,27 +45,5 @@ const RecentBox = () =>{
   
 }
 
-function RecentItem(props){
-  const navigate = useNavigate();
-  let goToProduct = ({target}) => {
-    const { id } = target;
-    navigate(`/product/${id}`);
-  }
-
-  return(
-    <li>
-      <div className="recent-card">
-        <img src={props.imgURL} width="100px" height="100px" alt=""/>
-        <div className="recent-card-info">
-          <p><b>{props.itemName}</b></p>
-          <p>{`Current Bid: $${Math.round(props.currentBid * .70)}`}</p>
-          <div className="recent-card-buttons">
-            <button className="spotlight-card-BTN" id={props.id} onClick={goToProduct}>View Item</button>
-          </div>
-        </div>
-      </div>
-    </li>
-  );
-}
 
 export default RecentBox;

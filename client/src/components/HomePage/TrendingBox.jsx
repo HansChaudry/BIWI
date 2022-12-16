@@ -10,7 +10,7 @@ const TrendingBox = () =>{
   },[]);
 
 	let getTrends = () => {
-    axios.get('/data/isTrending')
+    axios.get('/data/products/isTrending')
       .then((response) => {
         const data = response.data;
         setItems(data);

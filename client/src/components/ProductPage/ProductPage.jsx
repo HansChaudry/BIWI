@@ -3,14 +3,16 @@ import axios from "axios";
 import './ProductPage.css'
 
 const ProductPage = (props) => {
-    const [item, setItem] = useState([])
+    const [item, setItem] = useState([]);
+    const [seller, setSeller] = useState([]);
     
     useEffect(() => {
        getItem();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     let getItem = () => {
-        axios.get(`/data/byID/${props.id}`)
+        axios.get(`/data/products/byID/${props.id}`)
 		.then((response) => {
 			const data = response.data;
 			setItem(data);
